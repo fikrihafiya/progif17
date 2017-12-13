@@ -29,7 +29,7 @@ import(
 	
 func main() {
         
-        port := 8181
+        port := 9232
 
         http.HandleFunc("/klasemen/", makeHandler(viewHandler))
 
