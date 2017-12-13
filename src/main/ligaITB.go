@@ -70,7 +70,7 @@ func main() {
 //Mengirimkan keluaran Klasemen himpunan peserta Liga, diurutkan sesuai Ranking tertinggi, dari Poin terbesar
 func GetKlasemen(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("mysql",
-			"root:@tcp(127.0.0.1:3306)/bolaitb")
+			"root:@tcp(167.205.67.251:3306)/bolaitb")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -99,7 +99,7 @@ func GetKlasemen(w http.ResponseWriter, r *http.Request) {
 //Mengirimkan data hasil liga suatu tim bola HMJ sesuai masukan
 func GetHimpunan (w http.ResponseWriter, r *http.Request, hmj string) {
 	db, err := sql.Open("mysql",
-			"root:@tcp(127.0.0.1:3306)/bolaitb")
+			"root:@tcp(167.205.67.251:3306)/bolaitb")
 
 	if err != nil {
 		log.Fatal(err)
@@ -129,7 +129,7 @@ func GetHimpunan (w http.ResponseWriter, r *http.Request, hmj string) {
 //Menampilkan data klasemen seluruh tim, diurutkan dari yang memasukkan gol dengan jumlah terbanyak
 func GetAllSortedByGM(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("mysql",
-			"root:@tcp(127.0.0.1:3306)/bolaitb")
+			"root:@tcp(167.205.67.251:3306)/bolaitb")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -158,7 +158,7 @@ func GetAllSortedByGM(w http.ResponseWriter, r *http.Request) {
 //Menampilkan data klasemen seluruh tim, diurutkan dari yang kemasukan/kebobolan gol dengan jumlah terbanyak
 func GetAllSortedByGK(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("mysql",
-			"root:@tcp(127.0.0.1:3306)/bolaitb")
+			"root:@tcp(167.205.67.251:3306)/bolaitb")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -187,7 +187,7 @@ func GetAllSortedByGK(w http.ResponseWriter, r *http.Request) {
 //Menampilkan data klasemen seluruh tim, diurutkan dari yang selisih memasukkan dan kemasukan gol terbesar
 func GetAllSortedBySG(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("mysql",
-			"root:@tcp(127.0.0.1:3306)/bolaitb")
+			"root:@tcp(167.205.67.251:3306)/bolaitb")
 	if err != nil {
 		log.Fatal(err)
 	}
