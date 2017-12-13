@@ -24,15 +24,7 @@ import(
 	}
 	
 	
-	//GET seluruh klasemen (sorted by poin/rank) (GetKlasemen)
 
-	//GET sorted by GM (jumlah gol memasukkan) (GetAllSortedByGM)
-	
-	//GET sorted by GK (jumlah gol kemasukan) (GetAllSortedByGK)
-	
-	//GET detail spesifik suatu tim bola himpunan (GetHimpunan)
-	
-	//GET sorted by SG (selisih gol) (GetAllSortedBySG)
 	
 	
 func main() {
@@ -74,7 +66,8 @@ func main() {
         }
   }
 
-//GetKlasemen
+//GetKlasemen 
+//Mengirimkan keluaran Klasemen himpunan peserta Liga, diurutkan sesuai Ranking tertinggi, dari Poin terbesar
 func GetKlasemen(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("mysql",
 			"root:@tcp(127.0.0.1:3306)/bolaitb")
@@ -103,6 +96,7 @@ func GetKlasemen(w http.ResponseWriter, r *http.Request) {
 }
 
 //GetHimpunan
+//Mengirimkan data hasil liga suatu tim bola HMJ sesuai masukan
 func GetHimpunan (w http.ResponseWriter, r *http.Request, hmj string) {
 	db, err := sql.Open("mysql",
 			"root:@tcp(127.0.0.1:3306)/bolaitb")
@@ -132,6 +126,7 @@ func GetHimpunan (w http.ResponseWriter, r *http.Request, hmj string) {
 }
 
 //GetAllSortedByGM (Gol Memasukkan Terbanyak)
+//Menampilkan data klasemen seluruh tim, diurutkan dari yang memasukkan gol dengan jumlah terbanyak
 func GetAllSortedByGM(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("mysql",
 			"root:@tcp(127.0.0.1:3306)/bolaitb")
@@ -160,6 +155,7 @@ func GetAllSortedByGM(w http.ResponseWriter, r *http.Request) {
 }
 
 //GetAllSortedByGK (Gol Kemasukan Terbanyak)
+//Menampilkan data klasemen seluruh tim, diurutkan dari yang kemasukan/kebobolan gol dengan jumlah terbanyak
 func GetAllSortedByGK(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("mysql",
 			"root:@tcp(127.0.0.1:3306)/bolaitb")
@@ -187,7 +183,8 @@ func GetAllSortedByGK(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-//GetAllSortedBySG (Selisi gol terbesar)
+//GetAllSortedBySG (Selisih gol terbesar)
+//Menampilkan data klasemen seluruh tim, diurutkan dari yang selisih memasukkan dan kemasukan gol terbesar
 func GetAllSortedBySG(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("mysql",
 			"root:@tcp(127.0.0.1:3306)/bolaitb")
